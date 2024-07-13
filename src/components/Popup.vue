@@ -13,12 +13,11 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class=" w-full">
-    <div class="w-full h-[10vh]">
-      <Navbar />
+  <div class="w-full h-full">
+    <Navbar />
+    <div class="w-full h-[90vh] flex justify-center items-center">
+      <VocabDisplay />
     </div>
-    <VocabDisplay />   
-    <!-- Your other components go here -->
   </div>
 </template>
 

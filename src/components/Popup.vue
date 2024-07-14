@@ -3,6 +3,7 @@
 import { defineComponent } from 'vue';
 import Navbar from './Navbar.vue';
 import VocabDisplay from './VocabDisplay.vue';
+import {RouterView} from 'vue-router'
 export default defineComponent({
   name: 'JapaneseWord',
   components: {
@@ -16,7 +17,7 @@ export default defineComponent({
   <div class="w-full h-full">
     <Navbar />
     <div class="w-full h-[90vh] flex justify-center items-center">
-      <VocabDisplay />
+      <RouterView />
     </div>
   </div>
 </template>

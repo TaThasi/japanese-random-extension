@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import axios from 'axios';
 import { onMounted, ref, watch } from 'vue';
-
+import Navbar from './Navbar.vue';
 interface Word {
     id: number;
     jnpt: string;
     VocabExpression: string;
     VocabKana: string;
-    VocabMeaning: string;
+    VocabMeaning: string;   
     VocabPos: string;
     SentenceExpression: string;
     SentenceKana: string;
@@ -58,6 +58,9 @@ const getWord = () => {
 };
 </script>
 <template>
+    <div class="w-full">
+        <Navbar />
+    </div>
     <section class="flex flex-col justify-center items-center mt-10 space-y-10">
         <div class="flex justify-center items-center px-4 space-x-4 w-full max-w-xl">
             <div class="flex justify-center items-center">

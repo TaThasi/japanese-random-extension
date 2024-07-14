@@ -15,7 +15,6 @@ export default defineConfig({
         popup: resolve(__dirname, 'index.html'),
         background: resolve(__dirname, 'src/background.ts'),
         content: resolve(__dirname, 'src/content.ts'),
-        route: resolve(__dirname, 'src/router/index.ts')
       },
       output: {
         entryFileNames: 'src/[name].js',
@@ -23,5 +22,7 @@ export default defineConfig({
         assetFileNames: 'assets/[name].[ext]'
       }
     }
-  }
+  },
+  
+  
 });

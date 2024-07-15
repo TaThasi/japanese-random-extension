@@ -1,8 +1,9 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
+import { useUserStore } from './store';
 const isMenuOpen = ref(false);
-
+const {user} = useUserStore();
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
   console.log(isMenuOpen.value);
@@ -35,11 +36,21 @@ const toggleMenu = () => {
       </button>
     </div>
     <div class="space-y-8 p-4 flex justify-center flex-col text-xl ">
-      <RouterLink to="/signin">
-        <button class="text-black border-2 px-2 py-1 rounded-lg border-black w-full">
-          Sign In
-        </button>
-      </RouterLink>
+      <template v-if="!user">
+        <RouterLink to="/signin">
+          <button class="text-black border-2 px-2 py-1 rounded-lg border-black w-full">
+            Sign In
+          </button>
+        </RouterLink>
+      </template>
+      <template v-else>
+        <div class=" flex gap-x-4 justify-start items-center">
+          <i class="pi pi-user" style="color: slateblue"></i>
+          <p class="text-xl font-medium text-blue-500 uppercase cursor-pointer pt-1">
+           {{ user.name }}
+          </p>
+        </div>
+      </template>
       <RouterLink to="/signin">
         <div class=" flex gap-x-4 justify-start items-center">
           <i class="pi pi-cog" style="color: slateblue"></i>
